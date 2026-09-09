@@ -1,0 +1,95 @@
+/* ============================================================
+   Dreamtone NYC — Color tokens
+   A dark-first, cinematic palette: near-black house color,
+   a single signature marigold yellow lifted straight from the
+   wordmark, warm "paper" for editorial light surfaces, and a
+   small set of warm-tinted neutrals + film signal colors.
+   ============================================================ */
+
+:root {
+  /* ---- Core brand ---- */
+  --dt-black:          #0B0B0B;  /* house background */
+  --dt-black-pure:     #000000;  /* letterbox / true black */
+  --dt-ink:            #141413;  /* raised dark surface */
+  --dt-marigold:       #F0D030;  /* signature yellow (wordmark fill) */
+  --dt-marigold-bright:#FFE03A;  /* hover / highlight */
+  --dt-marigold-deep:  #D4B41E;  /* press / shadow */
+  --dt-paper:          #F6F1E7;  /* warm off-white editorial surface */
+  --dt-paper-dim:      #EBE5D6;  /* paper, second tone */
+  --dt-white:          #FFFFFF;
+
+  /* ---- Warm neutral ramp (dark -> light) ---- */
+  --dt-gray-950:       #0F0F0E;
+  --dt-gray-900:       #161615;
+  --dt-gray-850:       #1D1D1B;
+  --dt-gray-800:       #242422;
+  --dt-gray-700:       #33322F;
+  --dt-gray-600:       #46453F;
+  --dt-gray-500:       #6B6960;
+  --dt-gray-400:       #8E8C81;
+  --dt-gray-300:       #B5B2A6;
+  --dt-gray-200:       #D7D3C7;
+  --dt-gray-100:       #ECE9DF;
+
+  /* ---- Film signal colors ---- */
+  --dt-red:            #E0452B;  /* REC / live / destructive */
+  --dt-green:          #3FA66A;  /* online / success */
+  --dt-blue:           #3E7BCC;  /* link / info */
+
+  /* ============================================================
+     Semantic aliases — DEFAULT THEME IS DARK
+     Use these in components, not the raw ramp above.
+     ============================================================ */
+  --surface-base:      var(--dt-black);
+  --surface-raised:    var(--dt-ink);
+  --surface-card:      var(--dt-gray-900);
+  --surface-card-hover:var(--dt-gray-850);
+  --surface-paper:     var(--dt-paper);
+  --surface-inverse:   var(--dt-paper);
+
+  --text-primary:      var(--dt-white);
+  --text-secondary:    var(--dt-gray-300);
+  --text-muted:        var(--dt-gray-500);
+  --text-on-accent:    var(--dt-black);
+  --text-on-paper:     var(--dt-black);
+  --text-inverse:      var(--dt-black);
+
+  --accent:            var(--dt-marigold);
+  --accent-hover:      var(--dt-marigold-bright);
+  --accent-press:      var(--dt-marigold-deep);
+  --on-accent:         var(--dt-black);
+
+  --border-subtle:     var(--dt-gray-700);
+  --border-strong:     var(--dt-gray-500);
+  --border-accent:     var(--dt-marigold);
+  --border-on-paper:   #16161520;
+
+  --focus-ring:        var(--dt-marigold);
+  --danger:            var(--dt-red);
+  --success:           var(--dt-green);
+  --info:              var(--dt-blue);
+
+  --overlay-scrim:     rgba(0,0,0,0.66);
+}
+
+/* ============================================================
+   Paper theme — for editorial documents, decks, light UI.
+   Apply by adding class="dt-paper" (or [data-theme="paper"])
+   to a container; semantic aliases flip, raw ramp stays put.
+   ============================================================ */
+.dt-paper,
+[data-theme="paper"] {
+  --surface-base:      var(--dt-paper);
+  --surface-raised:    var(--dt-white);
+  --surface-card:      var(--dt-white);
+  --surface-card-hover:var(--dt-paper-dim);
+  --surface-inverse:   var(--dt-black);
+
+  --text-primary:      var(--dt-black);
+  --text-secondary:    var(--dt-gray-700);
+  --text-muted:        var(--dt-gray-500);
+  --text-inverse:      var(--dt-white);
+
+  --border-subtle:     #1616151A;
+  --border-strong:     #16161540;
+}

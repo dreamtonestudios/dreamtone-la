@@ -1,0 +1,40 @@
+{
+  "lanes": [
+    {
+      "id": "development",
+      "t": "Creative Development",
+      "v": "Plan it",
+      "d": "Paid pre-production. A fuzzy idea becomes a treatment, a budget, and a plan you can shoot."
+    },
+    {
+      "id": "music",
+      "t": "Music Videos",
+      "v": "See it",
+      "d": "Artist and label work, from a single listen to a finished cut."
+    },
+    {
+      "id": "documentary",
+      "t": "Documentary",
+      "v": "Follow it",
+      "d": "Long-form nonfiction, shot on location and licensed worldwide."
+    },
+    {
+      "id": "filmtv",
+      "t": "Film & TV",
+      "v": "Make it",
+      "d": "Narrative and episodic work, development through delivery."
+    },
+    {
+      "id": "murals",
+      "t": "Murals",
+      "v": "Paint it",
+      "d": "Commissioned walls for offices, retail, and public space, documented on film."
+    },
+    {
+      "id": "space",
+      "t": "The Loft",
+      "v": "Shoot in it",
+      "d": "A thousand square feet in the Fashion District, opening for rental."
+    }
+  ]
+}

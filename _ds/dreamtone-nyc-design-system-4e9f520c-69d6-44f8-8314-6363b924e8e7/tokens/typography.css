@@ -1,0 +1,76 @@
+/* ============================================================
+   Dreamtone NYC — Typography tokens
+   Four voices:
+     display  Anton            — poster headlines, all-caps impact
+     sans     Archivo          — UI, body copy, working headings
+     serif    Times New Roman  — editorial; ROMAN-NUMERAL SUMMARIES
+     mono     Space Mono       — timecode, technical metadata, eyebrows
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Anton', 'Archivo', system-ui, sans-serif;
+  --font-sans:    'Archivo', system-ui, -apple-system, sans-serif;
+  --font-serif:   'Times New Roman', Times, Georgia, serif;
+  --font-mono:    'Space Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* ---- Weights (Archivo) ---- */
+  --fw-regular: 400;  /* @kind font */
+  --fw-medium:  500;  /* @kind font */
+  --fw-semibold:600;  /* @kind font */
+  --fw-bold:    700;  /* @kind font */
+  --fw-black:   900;  /* @kind font */
+
+  /* ---- Type scale (px) ---- */
+  --fs-display-1: 88px;   /* hero poster   */
+  --fs-display-2: 64px;   /* big section   */
+  --fs-h1:        44px;
+  --fs-h2:        32px;
+  --fs-h3:        24px;
+  --fs-h4:        19px;
+  --fs-body-lg:   18px;
+  --fs-body:      15px;
+  --fs-small:     13px;
+  --fs-caption:   11px;   /* mono eyebrow / timecode */
+
+  /* ---- Line heights ---- */
+  --lh-poster:  0.92;  /* @kind font */
+  --lh-tight:   1.05;  /* @kind font */
+  --lh-snug:    1.25;  /* @kind font */
+  --lh-normal:  1.5;   /* @kind font */
+  --lh-relaxed: 1.65;  /* @kind font */
+
+  /* ---- Letter spacing ---- */
+  --ls-poster:  -0.02em;  /* @kind font */
+  --ls-tight:   -0.01em;  /* @kind font */
+  --ls-normal:  0;        /* @kind font */
+  --ls-wide:    0.04em;   /* @kind font */
+  --ls-eyebrow: 0.22em;   /* @kind font */
+}
+
+/* ============================================================
+   Optional utility classes — components mostly read the tokens
+   directly, but these are handy for docs, cards and decks.
+   ============================================================ */
+.dt-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+}
+.dt-display {
+  font-family: var(--font-display);
+  font-weight: 400;             /* Anton ships one weight */
+  line-height: var(--lh-poster);
+  letter-spacing: var(--ls-poster);
+  text-transform: uppercase;
+}
+.dt-serif {
+  font-family: var(--font-serif);
+}
+.dt-timecode {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}

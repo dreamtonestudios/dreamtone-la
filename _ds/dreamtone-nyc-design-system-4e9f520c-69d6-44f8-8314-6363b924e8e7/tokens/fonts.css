@@ -1,0 +1,13 @@
+/* ============================================================
+   Dreamtone NYC — Webfonts
+   Display : Anton        (poster headlines, all-caps impact)
+   Sans    : Archivo      (UI, body, working headings)
+   Serif   : Times New Roman (system) — editorial / roman-numeral summaries
+   Mono    : Space Mono   (timecode, technical metadata, eyebrows)
+   ------------------------------------------------------------
+   Times New Roman ships with every OS, so no @font-face is
+   needed for it; it is the deliberate "NEW YORK" voice from the
+   wordmark. The three webfonts load from Google Fonts.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');

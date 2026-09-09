@@ -1,0 +1,243 @@
+# Dreamtone LA — editor configuration.
+# Every field below becomes a form control at /admin. Anything not listed
+# stays in code, which is what keeps this screen short and safe.
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+
+publish_mode: simple
+
+collections:
+  # ---------------------------------------------------------------- PAGE COPY
+  - name: "pages"
+    label: "Page text"
+    files:
+      - name: "home"
+        label: "Home"
+        file: "content/copy.json"
+        fields:
+          - { name: home, label: "Home page", widget: object, fields: [
+              { name: eyebrow, label: "Badge above the headline", widget: string },
+              { name: headLead, label: "Headline — plain part", widget: string },
+              { name: headMark, label: "Headline — underlined part", widget: string },
+              { name: ctaPrimary, label: "Main button", widget: string },
+              { name: ctaSecondary, label: "Second button", widget: string },
+              { name: statementEyebrow, label: "Statement label", widget: string },
+              { name: statement, label: "Statement — plain part", widget: text },
+              { name: statementMark, label: "Statement — underlined part", widget: string },
+              { name: statementBody, label: "Statement — second paragraph", widget: text },
+              { name: lanesEyebrow, label: "Services list label", widget: string },
+              { name: devEyebrow, label: "Development band — label", widget: string },
+              { name: devHead, label: "Development band — headline", widget: string },
+              { name: devBody, label: "Development band — paragraph", widget: text },
+              { name: devCta, label: "Development band — button", widget: string },
+              { name: workEyebrow, label: "Work section — label", widget: string },
+              { name: workHead, label: "Work section — headline plain part", widget: string },
+              { name: workHeadMark, label: "Work section — underlined part", widget: string },
+              { name: workCta, label: "Work section — button", widget: string },
+              { name: ctaHead, label: "Closing headline", widget: string },
+              { name: ctaSub, label: "Closing line", widget: string },
+              { name: ctaButton, label: "Closing button", widget: string }
+            ] }
+          - { name: work, label: "Work page", widget: object, fields: [
+              { name: eyebrow, label: "Label", widget: string },
+              { name: headLead, label: "Headline — plain part", widget: string },
+              { name: headMark, label: "Headline — underlined part", widget: string },
+              { name: sub, label: "Intro paragraph", widget: text },
+              { name: licEyebrow, label: "Licensing label", widget: string },
+              { name: licHead, label: "Licensing headline", widget: string },
+              { name: licBody, label: "Licensing paragraph", widget: text },
+              { name: licCta, label: "Licensing button", widget: string }
+            ] }
+          - { name: loft, label: "Loft page", widget: object, fields: [
+              { name: headLead, label: "Headline — plain part", widget: string },
+              { name: headMark, label: "Headline — underlined part", widget: string },
+              { name: summaryEyebrow, label: "Summary label", widget: string },
+              { name: notListedHead, label: "Availability headline", widget: string },
+              { name: notListedBody, label: "Availability paragraph", widget: text },
+              { name: cta, label: "Availability button", widget: string },
+              { name: nycEyebrow, label: "Brooklyn band — label", widget: string },
+              { name: nycBody, label: "Brooklyn band — paragraph", widget: text },
+              { name: nycCta, label: "Brooklyn band — button", widget: string }
+            ] }
+          - { name: development, label: "Development page", widget: object, fields: [
+              { name: eyebrow, label: "Label", widget: string },
+              { name: headLead, label: "Headline — plain part", widget: string },
+              { name: headMark, label: "Headline — underlined part", widget: string },
+              { name: sub, label: "Intro paragraph", widget: text },
+              { name: stepsEyebrow, label: "Steps label", widget: string },
+              { name: deliverablesEyebrow, label: "Deliverables label", widget: string },
+              { name: closeHead, label: "Closing headline (line breaks allowed)", widget: text },
+              { name: closeBody, label: "Closing paragraph", widget: text },
+              { name: cta, label: "Closing button", widget: string }
+            ] }
+          - { name: murals, label: "Murals page", widget: object, fields: [
+              { name: eyebrow, label: "Label", widget: string },
+              { name: headLead, label: "Headline — plain part", widget: string },
+              { name: headMark, label: "Headline — underlined part", widget: string },
+              { name: sub, label: "Intro paragraph", widget: text },
+              { name: caseTag, label: "Case study — location line", widget: string },
+              { name: caseTitle, label: "Case study — title", widget: string },
+              { name: caseBody, label: "Case study — paragraph", widget: text },
+              { name: commissionEyebrow, label: "Commission label", widget: string },
+              { name: commissionHead, label: "Commission headline", widget: string },
+              { name: commissionBody, label: "Commission paragraph", widget: text },
+              { name: commissionCta, label: "Commission button", widget: string }
+            ] }
+          - { name: book, label: "Start a project page", widget: object, fields: [
+              { name: eyebrow, label: "Label", widget: string },
+              { name: headLead, label: "Headline — plain part", widget: string },
+              { name: headMark, label: "Headline — underlined part", widget: string },
+              { name: sub, label: "Intro paragraph", widget: text },
+              { name: kindsEyebrow, label: "Job types label", widget: string },
+              { name: altHead, label: "Direct contact headline", widget: string },
+              { name: altBody, label: "Direct contact paragraph", widget: text },
+              { name: kinds, label: "Job types", widget: list, fields: [
+                  { name: t, label: "Title", widget: string },
+                  { name: d, label: "Description", widget: string },
+                  { name: r, label: "Links to page", widget: select, required: false,
+                    options: ["", "development", "murals", "space", "work"] }
+                ] }
+            ] }
+          - { name: contact, label: "Contact page", widget: object, fields: [
+              { name: eyebrow, label: "Label", widget: string },
+              { name: headLead, label: "Headline — plain part", widget: string },
+              { name: headMark, label: "Headline — underlined part", widget: string },
+              { name: note, label: "Paragraph", widget: text },
+              { name: portrait, label: "Portrait photo", widget: image, required: false }
+            ] }
+          - { name: footer, label: "Footer", widget: object, fields: [
+              { name: blurb, label: "Footer paragraph", widget: text }
+            ] }
+
+  # ----------------------------------------------------------------- PROJECTS
+  - name: "work"
+    label: "Projects"
+    files:
+      - name: "projects"
+        label: "Project list"
+        file: "content/projects.json"
+        fields:
+          - name: projects
+            label: "Projects"
+            label_singular: "Project"
+            widget: list
+            summary: "{{fields.t}} — {{fields.cat}}"
+            fields:
+              - { name: t, label: "Title", widget: string }
+              - { name: cat, label: "Category", widget: string, hint: "Becomes a filter chip on the Work page. Reuse spellings exactly." }
+              - { name: client, label: "Client", widget: string }
+              - { name: loc, label: "Location", widget: string }
+              - { name: year, label: "Year", widget: string, required: false }
+              - { name: role, label: "Our role", widget: string }
+              - { name: d, label: "Description", widget: text }
+              - { name: image, label: "Photo", widget: image, required: false }
+              - { name: slot, label: "Photo placeholder label", widget: string, required: false, hint: "Shown in the empty frame until a photo is added." }
+              - { name: featured, label: "Show on the homepage", widget: boolean, default: true }
+              - { name: id, label: "Internal id", widget: string, hint: "Lowercase, no spaces. Leave alone once set." }
+
+      - name: "lanes"
+        label: "What we do (homepage list)"
+        file: "content/lanes.json"
+        fields:
+          - name: lanes
+            label: "Lanes"
+            label_singular: "Lane"
+            widget: list
+            summary: "{{fields.t}} — {{fields.v}}"
+            fields:
+              - { name: t, label: "Name", widget: string }
+              - { name: v, label: "Action words", widget: string, hint: "The short verb on the right, e.g. Plan it." }
+              - { name: d, label: "One-line description", widget: string }
+              - { name: id, label: "Links to page", widget: select,
+                  options: ["development", "murals", "space", "music", "documentary", "filmtv"] }
+
+  # -------------------------------------------------------------- STUDIO LOFT
+  - name: "loft"
+    label: "The Loft"
+    files:
+      - name: "loft"
+        label: "Loft details"
+        file: "content/loft.json"
+        fields:
+          - { name: name, label: "Name", widget: string }
+          - { name: kind, label: "Type line", widget: string }
+          - { name: city, label: "City", widget: string }
+          - { name: sqft, label: "Square footage", widget: string }
+          - { name: status, label: "Status badge", widget: string, hint: "e.g. Under construction, Now booking" }
+          - { name: opening, label: "Opening", widget: string }
+          - { name: blurb, label: "Description", widget: text }
+          - { name: heroImage, label: "Hero photo", widget: image, required: false }
+          - { name: gallery, label: "Gallery", widget: list, fields: [
+              { name: label, label: "Placeholder label", widget: string },
+              { name: image, label: "Photo", widget: image, required: false }
+            ] }
+          - { name: summary, label: "Roman-numeral summary", widget: list, field: { name: line, label: "Line", widget: string } }
+
+  # ------------------------------------------------------------- DEVELOPMENT
+  - name: "development"
+    label: "Development offer"
+    files:
+      - name: "development"
+        label: "Fees & deliverables"
+        file: "content/development.json"
+        fields:
+          - { name: fee, label: "Fee range", widget: string }
+          - { name: turnaround, label: "Turnaround", widget: string }
+          - { name: credit, label: "Credit-back line", widget: string }
+          - { name: works, label: "Applies to", widget: string }
+          - { name: deliverables, label: "Deliverables", widget: list, field: { name: line, label: "Line", widget: string } }
+          - { name: steps, label: "Process steps", widget: list, summary: "{{fields.n}}. {{fields.t}}", fields: [
+              { name: n, label: "Numeral", widget: string, hint: "i, ii, iii, iv" },
+              { name: t, label: "Title", widget: string },
+              { name: d, label: "Description", widget: text }
+            ] }
+
+  # ----------------------------------------------------------- LINKS & THEME
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "links"
+        label: "Contact & links"
+        file: "content/links.json"
+        fields:
+          - { name: email, label: "General email", widget: string }
+          - { name: directorEmail, label: "Director email", widget: string }
+          - { name: instagram, label: "Instagram URL", widget: string }
+          - { name: instagramHandle, label: "Instagram handle", widget: string }
+          - { name: subscribe, label: "Mailing list URL", widget: string }
+          - { name: reel, label: "Reel URL", widget: string }
+          - { name: gettyReel, label: "Getty library URL", widget: string }
+          - { name: bookingForm, label: "Inquiry form embed URL", widget: string, hint: "Google Form URL ending in ?embedded=true" }
+          - { name: nyc, label: "New York site URL", widget: string }
+          - { name: map, label: "Map embed URL", widget: string }
+
+      - name: "theme"
+        label: "Look & feel"
+        file: "content/theme.json"
+        fields:
+          - { name: mode, label: "Page mode", widget: select, options: ["light", "dark"] }
+          - { name: accentLA, label: "LA accent", widget: select,
+              options: [
+                { label: "Jacaranda purple", value: "#B15CD9" },
+                { label: "Sunset terracotta", value: "#E85D3D" },
+                { label: "Pool tile", value: "#7BD4D0" },
+                { label: "Hot pink", value: "#E8527A" }
+              ] }
+          - { name: accentBrand, label: "Brand accent", widget: select,
+              options: [
+                { label: "Marigold", value: "#F0D030" },
+                { label: "Amber", value: "#F5853F" },
+                { label: "REC red", value: "#E0452B" }
+              ] }
+          - { name: headlineFont, label: "Headline font", widget: select,
+              options: ["Biturg", "Helicopter", "Perfect Girl", "Unique Kingdom", "Deventer", "Anthrope", "Anton"] }
+          - { name: emphasis, label: "Headline emphasis", widget: select,
+              options: [
+                { label: "Accent underline", value: "underline" },
+                { label: "No underline", value: "plain" }
+              ] }

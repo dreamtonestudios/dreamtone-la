@@ -1,0 +1,30 @@
+{
+  "name": "The Loft",
+  "kind": "Photography Studio · Fashion District",
+  "city": "Downtown Los Angeles",
+  "sqft": "1,000 SqFt",
+  "status": "Under construction",
+  "opening": "Fall 2026",
+  "blurb": "A thousand square feet of photography loft in the Fashion District, Downtown Los Angeles. Built for stills, artist sessions, and small-crew production. It is under construction now.",
+  "heroImage": "",
+  "gallery": [
+    {
+      "label": "Loft — wide",
+      "image": ""
+    },
+    {
+      "label": "Loft — windows",
+      "image": ""
+    },
+    {
+      "label": "Loft — buildout",
+      "image": ""
+    }
+  ],
+  "summary": [
+    "One thousand square feet, Fashion District, Downtown Los Angeles.",
+    "Built for photography, artist sessions, and small-crew production.",
+    "Under construction. Opening Fall 2026.",
+    "Tell us your dates and we will hold you a slot before it lists."
+  ]
+}

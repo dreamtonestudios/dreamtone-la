@@ -1,0 +1,111 @@
+{
+  "home": {
+    "eyebrow": "Coming soon · Fashion District, DTLA",
+    "headLead": "A thousand square feet",
+    "headMark": "of daylight",
+    "ctaPrimary": "See the loft",
+    "ctaSecondary": "Ask about dates",
+    "statementEyebrow": "Dreamtone Los Angeles",
+    "statement": "A creative canvas and production ecosystem in Los Angeles. We shape cinematic vision, bold imagery, and moving narratives, and we anchor abstract ideas into something real,",
+    "statementMark": "from the first spark to the final frame",
+    "statementBody": "Some projects need deep creative development. Some need visual strategy. Some need high-end post. We build the ecosystem around the story and then we go make it.",
+    "lanesEyebrow": "What we do here",
+    "devEyebrow": "Creative Development",
+    "devHead": "Bring us the fuzzy idea",
+    "devBody": "Paid pre-production. A new single, a brand brief, or a thought you can’t shake. Three weeks later you have a treatment, a budget, a production plan, and a deck. Greenlight it with us and the fee credits back against the shoot.",
+    "devCta": "How it works",
+    "workEyebrow": "Selected LA work",
+    "workHead": "shot on this",
+    "workHeadMark": "coast",
+    "workCta": "All work",
+    "ctaHead": "Tell us what it’s about",
+    "ctaSub": "We’ll figure out how to film it.",
+    "ctaButton": "Start a project"
+  },
+  "work": {
+    "eyebrow": "Work · Los Angeles",
+    "headLead": "From the river",
+    "headMark": "to the wall",
+    "sub": "Music videos, murals, sessions, and documentary work made in Los Angeles. Footage licensed worldwide through Getty Images.",
+    "licEyebrow": "Licensing",
+    "licHead": "Footage, cleared and ready to place",
+    "licBody": "Our library is licensed worldwide through Getty Images.",
+    "licCta": "Browse the library"
+  },
+  "loft": {
+    "headLead": "The Fashion District",
+    "headMark": "loft",
+    "summaryEyebrow": "The short version",
+    "notListedHead": "Not listed yet",
+    "notListedBody": "Rates and the booking calendar go live when the buildout finishes. If you know roughly when you need a room, tell us now and we will come to you first.",
+    "cta": "Ask about dates",
+    "nycEyebrow": "Need a room today",
+    "nycBody": "Our two Brooklyn studios are open and bookable now, a 3,000 square foot cyc stage and a 1,200 square foot portrait loft.",
+    "nycCta": "Dreamtone NYC ▸"
+  },
+  "development": {
+    "eyebrow": "Creative Development",
+    "headLead": "Paid",
+    "headMark": "pre-production",
+    "sub": "Most projects die in the gap between the idea and the plan. This is the work that closes it.",
+    "stepsEyebrow": "How it runs",
+    "deliverablesEyebrow": "What lands in your hands",
+    "closeHead": "Three weeks.\nFixed fee.\nNo surprises.",
+    "closeBody": "Scope sets the number and we agree it before we start. If you make the project with us, that money comes back off the production budget.",
+    "cta": "Start a development block"
+  },
+  "murals": {
+    "eyebrow": "Murals · Los Angeles",
+    "headLead": "Walls that",
+    "headMark": "get filmed",
+    "sub": "Commissioned mural work for offices, retail, hospitality, and public walls across Los Angeles. Designed, painted, and documented on film by the same studio.",
+    "caseTag": "Beverly Hills · Interior",
+    "caseTitle": "Above The Clouds",
+    "caseBody": "A commissioned interior mural for the Beverly Hills office of a film and television company built around emerging directors and writers. Designed to the room, painted on site, and shot as it went up.",
+    "commissionEyebrow": "Commission a wall",
+    "commissionHead": "Your lobby is a canvas",
+    "commissionBody": "Send us the room, the square footage, and roughly what it should feel like. We come back with concepts, a price, and a schedule, and we film the whole thing so you have something to post when it is done.",
+    "commissionCta": "Start a commission"
+  },
+  "book": {
+    "eyebrow": "Start a project",
+    "headLead": "Tell us",
+    "headMark": "what it’s about",
+    "sub": "One form, whatever the job is. We answer from Los Angeles.",
+    "kindsEyebrow": "What are we talking about",
+    "altHead": "Or just write to us",
+    "altBody": "Dates, a rough budget, and a sentence about the project is enough to start.",
+    "kinds": [
+      {
+        "t": "Creative Development",
+        "d": "A treatment, budget, plan, and deck in three weeks.",
+        "r": "development"
+      },
+      {
+        "t": "A shoot",
+        "d": "Music video, documentary, brand, or film and TV work.",
+        "r": ""
+      },
+      {
+        "t": "A mural",
+        "d": "Interior or exterior wall, designed and filmed.",
+        "r": "murals"
+      },
+      {
+        "t": "The loft",
+        "d": "Fashion District photography space, opening Fall 2026.",
+        "r": "space"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact · Los Angeles",
+    "headLead": "We’re",
+    "headMark": "on this coast",
+    "note": "Based in Downtown Los Angeles, working across the city and back east. Studio loft in the Fashion District, opening Fall 2026.",
+    "portrait": "assets/min/blake-portrait.jpg"
+  },
+  "footer": {
+    "blurb": "A creative canvas and production ecosystem in Los Angeles. From the first spark to the final frame."
+  }
+}

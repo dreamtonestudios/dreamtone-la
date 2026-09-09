@@ -1,0 +1,56 @@
+{
+  "projects": [
+    {
+      "id": "huku",
+      "t": "Sho Madjozi, “Huku”",
+      "cat": "Music Video",
+      "client": "FAX Records",
+      "loc": "LA River",
+      "year": "",
+      "role": "Producer & drone operator",
+      "d": "Shot on the concrete of the LA River. Aerial and second-unit coverage, produced on location for FAX Records.",
+      "image": "",
+      "slot": "Sho Madjozi — LA River still",
+      "featured": true
+    },
+    {
+      "id": "atc-mural",
+      "t": "Above The Clouds",
+      "cat": "Mural Commission",
+      "client": "Above The Clouds",
+      "loc": "Beverly Hills",
+      "year": "",
+      "role": "Design & execution",
+      "d": "A commissioned interior mural for the Beverly Hills office of a film and television company built around emerging directors and writers.",
+      "image": "assets/min/atc-1.jpg",
+      "slot": "Above The Clouds mural",
+      "featured": true
+    },
+    {
+      "id": "signature-tracks",
+      "t": "Signature Tracks",
+      "cat": "Studio & Promo",
+      "client": "Signature Tracks",
+      "loc": "Los Angeles",
+      "year": "2020",
+      "role": "Production & post",
+      "d": "Session capture, promos, and reels with the music production and supervision company behind scores for network and streaming series.",
+      "image": "",
+      "slot": "Signature Tracks session",
+      "featured": true
+    },
+    {
+      "id": "style-wars-2",
+      "t": "Style Wars 2",
+      "cat": "Featured Work",
+      "client": "Public Art Films",
+      "loc": "Los Angeles",
+      "year": "2013",
+      "role": "Artwork featured",
+      "d": "Blake’s work and art appear in Style Wars 2, screened in Los Angeles in 2013.",
+      "image": "",
+      "slot": "Style Wars 2 — screening still",
+      "featured": false
+    }
+  ]
+}

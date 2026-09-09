@@ -1,0 +1,34 @@
+{
+  "fee": "$2,500 – $15,000",
+  "turnaround": "Three weeks",
+  "credit": "Credits back against production",
+  "works": "Music video, documentary, and brand work.",
+  "deliverables": [
+    "A treatment that says what the thing actually is.",
+    "A budget you can hand to a financier.",
+    "A production plan with crew, locations, and days.",
+    "A pitch deck built to be shown, not read."
+  ],
+  "steps": [
+    {
+      "n": "i",
+      "t": "You bring the spark",
+      "d": "A new single, a brand brief, a documentary subject, or an idea you cannot shake. It does not need to be formed."
+    },
+    {
+      "n": "ii",
+      "t": "We interrogate it",
+      "d": "A working session, then reference, visual strategy, and the honest question of what this thing actually is."
+    },
+    {
+      "n": "iii",
+      "t": "We build the package",
+      "d": "Treatment, budget, production plan, and a pitch deck built to be shown in a room."
+    },
+    {
+      "n": "iv",
+      "t": "You own it",
+      "d": "Take it anywhere. Greenlight it with us and the fee credits back against the production budget."
+    }
+  ]
+}
