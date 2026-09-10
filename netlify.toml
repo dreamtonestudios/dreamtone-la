@@ -30,6 +30,19 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# Hide the Netlify subdomains — only www.dreamtonela.com should ever show.
+[[redirects]]
+  from = "https://dreamtone-la.netlify.app/*"
+  to = "https://www.dreamtonela.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://main--dreamtone-la.netlify.app/*"
+  to = "https://www.dreamtonela.com/:splat"
+  status = 301
+  force = true
+
 # Keep /admin working, then send everything else to the single-page app.
 [[redirects]]
   from = "/admin/*"
