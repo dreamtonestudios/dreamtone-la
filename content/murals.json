@@ -1,0 +1,43 @@
+{
+"partner": {
+"eyebrow": "Exclusive mural partner",
+"name": "Westside Muralist",
+"url": "https://www.westsidemuralist.com/",
+"line": "Every Dreamtone LA mural runs through Westside Muralist.",
+"body": "Westside Muralist is our exclusive mural partner. They work with a bench of Los Angeles mural and graffiti artists on custom installations for companies across the city. We design to the room and film the build; Westside puts it on the wall. One point of contact, one price, one schedule.",
+"cta": "See Westside Muralist"
+},
+"galleryEyebrow": "Recent walls",
+"galleryHead": "Painted with Westside",
+"galleryBody": "A sample of the range — portraiture, lettering, full building wraps, and painted objects. Every wall below was designed, painted, and documented by the partnership.",
+"gallery": [
+{
+"title": "Portrait with halo",
+"tag": "Los Angeles · Exterior",
+"note": "Black-and-grey portraiture at scale, with a hand-sprayed halo and an intentional run-down on raw concrete.",
+"image": "assets/min/mural-portrait-halo.jpg",
+"credit": ""
+},
+{
+"title": "Wonder Dirty Six",
+"tag": "Los Angeles · Exterior",
+"note": "Full-wall lettering and portrait on a lavender field of line-drawn poppies. Colour-forward and built to be photographed.",
+"image": "assets/min/mural-wonder-dirty-six.jpg",
+"credit": "@tommy_wonder"
+},
+{
+"title": "Painted art car",
+"tag": "Commission · Object",
+"note": "Hand-painted livery across an air-cooled 911 — houndstooth, colour blocking, and a checker flag panel.",
+"image": "assets/min/mural-art-car.webp",
+"credit": ""
+},
+{
+"title": "Corner building wrap",
+"tag": "High desert · Exterior",
+"note": "A whole building taken as one canvas — desert palette, hawk, coyote, and a night sky carried around the corner.",
+"image": "assets/min/mural-building-wrap.jpeg",
+"credit": ""
+}
+]
+}
