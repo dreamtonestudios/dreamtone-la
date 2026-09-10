@@ -33,6 +33,7 @@
     const Eyebrow = window.LAEyebrow;
     const Mark = window.LAMark, Bars = window.LABars, Slot = window.LASlot;
     const L = window.LA_LINKS, loft = window.LA_LOFT, lanes = window.LA_LANES, projects = window.LA_PROJECTS;
+    const I = window.LA_IMG;
     const C = window.LA_COPY;
 
     return (
@@ -41,6 +42,8 @@
         <section style={{ background: '#0B0B0B', position: 'relative' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 32px 72px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: '52px', alignItems: 'center' }}>
             <div>
+              <img src={I.logoLA} alt="Dreamtone Los Angeles"
+                style={{ display: 'block', width: '100%', maxWidth: '440px', height: 'auto', marginBottom: '30px' }} />
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '9px', border: '1px solid var(--la)', borderRadius: '999px', padding: '6px 14px' }}>
                 <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--la)', flexShrink: 0 }} />
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--la)' }}>{C.home.eyebrow}</span>
@@ -67,9 +70,15 @@
               </div>
             </div>
             <div style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden', borderRadius: 'var(--radius-lg)', border: '1px solid #33322F', background: 'var(--site-bg-alt)' }}>
-              <Slot id="la-hero-loft" label="The Fashion District loft" src={loft.heroImage} />
-              <div style={{ position: 'absolute', left: '16px', bottom: '16px', pointerEvents: 'none', fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#fff', background: 'rgba(11,11,11,0.72)', padding: '7px 12px', borderRadius: '999px' }}>
-                Under construction · 2026
+              <iframe src={L.map} title="Fashion District, Downtown Los Angeles" loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade" allowFullScreen
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0, filter: 'grayscale(0.35) contrast(1.05)' }} />
+              <div style={{ position: 'absolute', left: '16px', top: '16px', display: 'inline-flex', alignItems: 'center', gap: '9px', pointerEvents: 'none', background: 'var(--la)', color: '#fff', padding: '9px 14px', borderRadius: '999px', boxShadow: '0 4px 14px rgba(0,0,0,0.35)' }}>
+                <i data-lucide="map-pin" style={{ width: '15px', height: '15px' }} />
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700 }}>Fashion District</span>
+              </div>
+              <div style={{ position: 'absolute', left: '16px', bottom: '16px', pointerEvents: 'none', fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#fff', background: 'rgba(11,11,11,0.78)', padding: '7px 12px', borderRadius: '999px' }}>
+                Downtown Los Angeles · Opening {loft.opening}
               </div>
             </div>
           </div>

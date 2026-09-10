@@ -6,6 +6,8 @@
     const Mark = window.LAMark, Bars = window.LABars, Slot = window.LASlot;
     const I = window.LA_IMG;
     const C = window.LA_COPY;
+    const M = window.LA_MURALS;
+    const P = M.partner;
 
     return (
       <div>
@@ -37,6 +39,56 @@
               <div key={i} style={{ position: 'relative', aspectRatio: i === 0 ? '4/5' : '4/5', overflow: 'hidden', borderRadius: 'var(--radius-md)', border: '1px solid var(--site-border)', background: 'var(--site-bg-alt)' }}>
                 <Slot id={'la-atc-' + i} label={'Above The Clouds — ' + (i + 1)} src={src} />
               </div>
+            )}
+          </div>
+        </section>
+
+        {/* Exclusive mural partner */}
+        <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '76px 32px 0' }}>
+          <div style={{ border: '1px solid var(--site-border)', borderTop: '3px solid var(--la)', borderRadius: 'var(--radius-lg)', padding: '40px', background: 'var(--site-bg-alt)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '40px', alignItems: 'start' }}>
+            <div>
+              <Eyebrow>{P.eyebrow}</Eyebrow>
+              <h2 style={{ fontFamily: 'var(--font-display)', textTransform: 'uppercase', fontSize: 'clamp(34px,4.6vw,62px)', lineHeight: 0.95, letterSpacing: '-0.01em', margin: '14px 0 0', color: 'var(--site-text)' }}>
+                {P.name}
+              </h2>
+              <p style={{ fontFamily: 'var(--font-serif)', fontSize: '20px', lineHeight: 1.5, color: 'var(--site-text)', marginTop: '16px', maxWidth: '30ch' }}>
+                {P.line}
+              </p>
+            </div>
+            <div>
+              <p style={{ fontSize: '17px', lineHeight: 1.65, color: 'var(--site-text-2)', margin: 0, maxWidth: '54ch' }}>
+                {P.body}
+              </p>
+              <div style={{ marginTop: '26px' }}>
+                <a href={P.url} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+                  <Button variant="secondary">{P.cta}</Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* The walls */}
+        <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '72px 32px 0' }}>
+          <Eyebrow>{M.galleryEyebrow}</Eyebrow>
+          <h2 style={{ fontSize: 'clamp(30px,4vw,48px)', letterSpacing: '-0.01em', margin: '12px 0 0', color: 'var(--site-text)' }}>{M.galleryHead}</h2>
+          <p style={{ fontSize: '18px', lineHeight: 1.6, color: 'var(--site-text-2)', maxWidth: '62ch', marginTop: '14px' }}>
+            {M.galleryBody}
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: '28px', marginTop: '36px' }}>
+            {M.gallery.map((g, i) =>
+              <figure key={i} style={{ margin: 0 }}>
+                <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden', borderRadius: 'var(--radius-md)', border: '1px solid var(--site-border)', background: 'var(--site-bg-alt)' }}>
+                  <Slot id={'la-mural-' + i} label={g.title} src={g.image} />
+                </div>
+                <figcaption style={{ marginTop: '14px' }}>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--la)' }}>
+                    {g.tag}{g.credit ? ' \u00b7 ' + g.credit : ''}
+                  </div>
+                  <h3 style={{ margin: '6px 0 0', fontSize: '21px', fontWeight: 700, letterSpacing: '-0.01em', color: 'var(--site-text)' }}>{g.title}</h3>
+                  <p style={{ fontSize: '16px', lineHeight: 1.55, color: 'var(--site-text-2)', margin: '8px 0 0', maxWidth: '46ch' }}>{g.note}</p>
+                </figcaption>
+              </figure>
             )}
           </div>
         </section>

@@ -38,7 +38,8 @@
     const Bars = window.LABars;
     const narrow = window.LAuseNarrow(920);
     const [open, setOpen] = React.useState(false);
-    const links = [['work', 'Work'], ['space', 'The Loft'], ['development', 'Development'], ['murals', 'Murals'], ['contact', 'Contact']];
+    const links = [['home', 'Home'], ['work', 'Work'], ['space', 'The Loft'], ['development', 'Development'], ['murals', 'Murals'], ['contact', 'Contact']];
+    const href = (id) => (window.LA_PATHS && window.LA_PATHS[id]) || '/';
     const active = (id) => route === id;
     React.useEffect(() => { if (!narrow) setOpen(false); }, [narrow]);
     const nav = (id) => { setOpen(false); go(id); };
@@ -62,7 +63,7 @@
           padding: narrow ? '12px 18px' : '14px 32px', gap: '16px'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', minWidth: 0 }}>
-            <a onClick={() => nav('home')} style={{ cursor: 'pointer', display: 'inline-flex' }}>
+            <a href="/" onClick={(e) => { e.preventDefault(); nav('home'); }} style={{ cursor: 'pointer', display: 'inline-flex' }}>
               <img src={window.LA_IMG.logoLA} alt="Dreamtone Los Angeles" style={{ height: narrow ? '28px' : '34px', width: 'auto', display: 'block' }} />
             </a>
             {!narrow && <TimeCode />}
@@ -82,7 +83,7 @@
           ) : (
             <nav style={{ display: 'flex', alignItems: 'center', gap: '3px', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
               {links.map(([id, label]) =>
-                <a key={id} onClick={() => nav(id)} style={linkStyle(id)}>{label}</a>
+                <a key={id} href={href(id)} onClick={(e) => { e.preventDefault(); nav(id); }} style={linkStyle(id)}>{label}</a>
               )}
               <div style={{ width: '10px' }} />
               <CitySwitch />
@@ -95,7 +96,7 @@
         {narrow && open &&
           <nav style={{ borderTop: '1px solid #23231f', padding: '10px 18px 22px', display: 'flex', flexDirection: 'column', gap: '2px' }}>
             {links.map(([id, label]) =>
-              <a key={id} onClick={() => nav(id)} style={linkStyle(id, true)}>{label}</a>
+              <a key={id} href={href(id)} onClick={(e) => { e.preventDefault(); nav(id); }} style={linkStyle(id, true)}>{label}</a>
             )}
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginTop: '18px', flexWrap: 'wrap' }}>
               <CitySwitch />

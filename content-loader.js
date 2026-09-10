@@ -9,8 +9,8 @@ window.LA_CONTENT_READY = (async function () {
     return r.json();
   };
 
-  const [theme, links, loft, dev, projects, lanes, copy] = await Promise.all(
-    ['theme', 'links', 'loft', 'development', 'projects', 'lanes', 'copy'].map(get)
+  const [theme, links, loft, dev, projects, lanes, copy, murals] = await Promise.all(
+    ['theme', 'links', 'loft', 'development', 'projects', 'lanes', 'copy', 'murals'].map(get)
   );
 
   const img = (v) => (v && String(v).trim()) ? v.replace(/^\//, '') : null;
@@ -26,6 +26,10 @@ window.LA_CONTENT_READY = (async function () {
   window.LA_LINKS = links;
   window.LA_COPY = copy;
   window.LA_LANES = lanes.lanes;
+
+  window.LA_MURALS = Object.assign({}, murals, {
+    gallery: (murals.gallery || []).map((g) => Object.assign({}, g, { image: img(g.image) })),
+  });
   window.LA_DEV = dev;
 
   window.LA_LOFT = Object.assign({}, loft, {
@@ -40,6 +44,7 @@ window.LA_CONTENT_READY = (async function () {
 
   window.LA_IMG = {
     logoLA: 'assets/min/dreamtone-la-logo.png',
+    logoLABlack: 'assets/min/dreamtone-la-logo-black.jpg',
     blake: img(copy.contact && copy.contact.portrait),
     atc1: img('assets/min/atc-1.jpg'),
     atc2: img('assets/min/atc-2.jpg'),

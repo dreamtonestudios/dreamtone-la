@@ -137,6 +137,10 @@ three gallery photos, and the roman-numeral summary. When the buildout finishes,
 status badge from "Under construction" to "Now booking" and rewrite the availability
 paragraph. That's the whole update.
 
+**Murals** — the mural partner block (name, website, statement, paragraph) and the wall gallery.
+Each wall takes a title, location line, description, artist credit, and a photo. Add, delete, and drag
+to reorder. The four working titles are descriptive placeholders — correct them here.
+
 **Development offer** — fee range, turnaround, credit-back line, the four deliverables, and the
 four process steps. Change the fee in one place and it updates on the homepage band and the
 Development page together.
@@ -160,6 +164,24 @@ still, and a Signature Tracks session photo.
 
 Layout, spacing, the nav, page structure, and the small metadata labels are in code. That's
 deliberate — it's what stops the site drifting out of shape. Ask me and I'll change them.
+
+---
+
+## PART 6 — Getting found on Google
+
+Every page now has a real address: `/work`, `/murals`, `/the-loft`, `/development`, `/start`,
+`/contact` — each with its own title and description. Shared links unfurl with the logo instead of a
+blank card.
+
+One step is left, and only you can do it:
+
+1. https://search.google.com/search-console → add `dreamtonela.com` as a Domain property.
+2. Verify with the TXT record it gives you. Netlify runs your DNS now, so add it under
+   **Domain management → DNS records**.
+3. Open **Sitemaps** and submit `sitemap.xml`.
+
+Indexing takes days to weeks. Searching your own name is the wrong test — search a phrase from the
+homepage in quotes.
 
 ---
 

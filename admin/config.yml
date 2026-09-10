@@ -178,6 +178,37 @@ collections:
             ] }
           - { name: summary, label: "Roman-numeral summary", widget: list, field: { name: line, label: "Line", widget: string } }
 
+  # ---------------------------------------------------------------- MURALS
+  - name: "murals"
+    label: "Murals"
+    files:
+      - name: "murals"
+        label: "Partner & walls"
+        file: "content/murals.json"
+        fields:
+          - { name: partner, label: "Mural partner", widget: object, fields: [
+              { name: eyebrow, label: "Label above the name", widget: string },
+              { name: name, label: "Partner name", widget: string },
+              { name: url, label: "Partner website", widget: string },
+              { name: line, label: "One-line statement", widget: string },
+              { name: body, label: "Paragraph", widget: text },
+              { name: cta, label: "Button label", widget: string }
+            ] }
+          - { name: galleryEyebrow, label: "Gallery label", widget: string }
+          - { name: galleryHead, label: "Gallery headline", widget: string }
+          - { name: galleryBody, label: "Gallery intro paragraph", widget: text }
+          - name: gallery
+            label: "Walls"
+            label_singular: "Wall"
+            widget: list
+            summary: "{{fields.title}} — {{fields.tag}}"
+            fields:
+              - { name: title, label: "Title", widget: string }
+              - { name: tag, label: "Location line", widget: string, hint: "e.g. Los Angeles · Exterior" }
+              - { name: note, label: "Description", widget: text }
+              - { name: credit, label: "Artist credit", widget: string, required: false, hint: "e.g. @tommy_wonder. Leave empty for none." }
+              - { name: image, label: "Photo", widget: image, required: false }
+
   # ------------------------------------------------------------- DEVELOPMENT
   - name: "development"
     label: "Development offer"

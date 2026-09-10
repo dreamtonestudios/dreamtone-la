@@ -43,13 +43,72 @@
     'Anton': "'Anton', sans-serif",
   };
 
+  // Real addresses. The Netlify catch-all rewrite sends every path to index.html,
+  // so these are genuine, shareable, crawlable URLs — not fragments.
+  const PATHS = { home:'/', work:'/work', space:'/the-loft', murals:'/murals',
+                  development:'/development', book:'/start', contact:'/contact' };
+  window.LA_PATHS = PATHS;
+  const ROUTES = Object.keys(PATHS).reduce((o,k)=>{ o[PATHS[k]]=k; return o; },{});
+
+  const META = {
+    home:        ['Dreamtone Los Angeles \u2014 Film, Photo, Murals, Development',
+                  'A creative canvas and production ecosystem in Los Angeles. Creative development, music videos, documentary, film and TV, murals, and a photography loft in the Fashion District.'],
+    work:        ['Work \u2014 Dreamtone Los Angeles',
+                  'Selected music video, documentary, film and television work from Dreamtone LA.'],
+    space:       ['The Loft \u2014 Dreamtone Los Angeles',
+                  'A daylight photography loft in the Downtown Los Angeles Fashion District. Square footage, availability, and booking.'],
+    murals:      ['Murals \u2014 Dreamtone Los Angeles',
+                  'Commissioned mural work across Los Angeles with our exclusive mural partner, Westside Muralist. Offices, retail, hospitality, and public walls.'],
+    development: ['Creative Development \u2014 Dreamtone Los Angeles',
+                  'A treatment, budget, plan, and deck in three weeks, for a fixed fee. Credited back if we shoot it.'],
+    book:        ['Start a project \u2014 Dreamtone Los Angeles',
+                  'Tell us what it is about. One form, whatever the job is. We answer from Los Angeles.'],
+    contact:     ['Contact \u2014 Dreamtone Los Angeles',
+                  'Reach Dreamtone Los Angeles \u2014 email, Instagram, and the Fashion District studio.'],
+  };
+
+  const ORIGIN = 'https://www.dreamtonela.com';
+
+  function setMeta(route){
+    const m = META[route] || META.home;
+    document.title = m[0];
+    const set = (sel, attr, val) => {
+      const el = document.querySelector(sel);
+      if (el) el.setAttribute(attr, val);
+    };
+    set('meta[name="description"]', 'content', m[1]);
+    set('meta[property="og:title"]', 'content', m[0]);
+    set('meta[property="og:description"]', 'content', m[1]);
+    set('meta[property="og:url"]', 'content', ORIGIN + (PATHS[route] || '/'));
+    set('link[rel="canonical"]', 'href', ORIGIN + (PATHS[route] || '/'));
+  }
+
   function LAApp(){
     const TWEAK_DEFAULTS = window.LA_THEME;
     const useTweaks = window.useTweaks;
     const [t, setTweak] = useTweaks ? useTweaks(TWEAK_DEFAULTS) : [TWEAK_DEFAULTS, ()=>{}];
 
-    const [route, setRoute] = React.useState('home');
-    const go = (r) => { setRoute(r); window.scrollTo(0,0); };
+    const [route, setRoute] = React.useState(() => ROUTES[window.location.pathname.replace(/\/+$/,'') || '/'] || 'home');
+
+    const go = (r) => {
+      setRoute(r);
+      const p = PATHS[r] || '/';
+      if (window.location.pathname !== p) window.history.pushState({ route:r }, '', p);
+      setMeta(r);
+      window.scrollTo(0,0);
+    };
+
+    // Back and forward buttons move between pages the way a visitor expects.
+    React.useEffect(()=>{
+      const onPop = () => {
+        const r = ROUTES[window.location.pathname.replace(/\/+$/,'') || '/'] || 'home';
+        setRoute(r); setMeta(r);
+      };
+      window.addEventListener('popstate', onPop);
+      return () => window.removeEventListener('popstate', onPop);
+    },[]);
+
+    React.useEffect(()=>{ setMeta(route); },[route]);
 
     React.useEffect(()=>{ if(window.lucide) window.lucide.createIcons(); });
 
