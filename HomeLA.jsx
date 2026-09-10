@@ -2,12 +2,15 @@
 (function () {
   function LaneRow({ lane, go }) {
     const [hov, setHov] = React.useState(false);
+    const narrow = window.LAuseNarrow(760);
     return (
       <a onClick={() => go(lane.id === 'space' ? 'space' : lane.id === 'development' ? 'development' : lane.id === 'murals' ? 'murals' : 'work')}
         onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
         style={{
-          display: 'grid', gridTemplateColumns: 'minmax(0,1.1fr) minmax(0,1.4fr) auto', gap: '24px',
-          alignItems: 'baseline', padding: '22px 4px', cursor: 'pointer',
+          display: 'grid',
+          gridTemplateColumns: narrow ? '1fr' : 'minmax(0,1.1fr) minmax(0,1.4fr) auto',
+          gap: narrow ? '10px' : '24px',
+          alignItems: narrow ? 'start' : 'baseline', padding: '22px 4px', cursor: 'pointer',
           borderBottom: '1px solid var(--site-border)',
           background: hov ? 'color-mix(in srgb, var(--la) 7%, transparent)' : 'transparent',
           transition: 'background 160ms ease-out'
