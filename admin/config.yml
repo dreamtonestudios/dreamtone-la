@@ -41,7 +41,9 @@ collections:
               { name: workCta, label: "Work section — button", widget: string },
               { name: ctaHead, label: "Closing headline", widget: string },
               { name: ctaSub, label: "Closing line", widget: string },
-              { name: ctaButton, label: "Closing button", widget: string }
+              { name: ctaButton, label: "Closing button", widget: string },
+              { name: riverEyebrow, label: "River video — label", widget: string },
+              { name: riverHead, label: "River video — headline", widget: string }
             ] }
           - { name: work, label: "Work page", widget: object, fields: [
               { name: eyebrow, label: "Label", widget: string },
@@ -246,6 +248,7 @@ collections:
           - { name: bookingForm, label: "Inquiry form embed URL", widget: string, hint: "Google Form URL ending in ?embedded=true" }
           - { name: nyc, label: "New York site URL", widget: string }
           - { name: map, label: "Map embed URL", widget: string }
+          - { name: riverDrone, label: "LA River drone video URL", widget: string, hint: "Direct video file link (a Dropbox share link with ?raw=1 works)" }
 
       - name: "theme"
         label: "Look & feel"

@@ -176,6 +176,19 @@
             </div>
           </div>
         </section>
+
+        {/* RIVER — aerial */}
+        <Bars />
+        <section style={{ background: '#0B0B0B' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '72px 32px 88px' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--la)' }}>{C.home.riverEyebrow}</div>
+            <h2 style={{ fontFamily: 'var(--font-display)', textTransform: 'uppercase', fontSize: 'clamp(30px,4vw,52px)', lineHeight: 1, letterSpacing: '-0.01em', margin: '14px 0 28px', color: '#fff' }}>{C.home.riverHead}</h2>
+            <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden', borderRadius: 'var(--radius-lg)', border: '1px solid #33322F', background: '#000' }}>
+              <video src={L.riverDrone} controls muted loop playsInline preload="metadata"
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+          </div>
+        </section>
       </div>);
   }
   window.LAHome = LAHome;
