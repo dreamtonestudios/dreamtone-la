@@ -36,8 +36,21 @@
   function LAHeader({ route, go }) {
     const { Button } = window.DreamtoneNYCDesignSystem_4e9f52;
     const Bars = window.LABars;
+    const narrow = window.LAuseNarrow(920);
+    const [open, setOpen] = React.useState(false);
     const links = [['work', 'Work'], ['space', 'The Loft'], ['development', 'Development'], ['murals', 'Murals'], ['contact', 'Contact']];
     const active = (id) => route === id;
+    React.useEffect(() => { if (!narrow) setOpen(false); }, [narrow]);
+    const nav = (id) => { setOpen(false); go(id); };
+
+    const linkStyle = (id, big) => ({
+      fontFamily: 'var(--font-sans)', fontSize: big ? '18px' : '14px', fontWeight: 600,
+      padding: big ? '14px 4px' : '8px 12px', borderRadius: 'var(--radius-sm)', cursor: 'pointer',
+      color: active(id) ? '#FFFFFF' : 'rgba(255,255,255,0.68)',
+      boxShadow: active(id) ? (big ? 'inset 3px 0 0 var(--la)' : 'inset 0 -3px 0 var(--la)') : 'none',
+      paddingLeft: big ? '14px' : undefined, display: big ? 'block' : undefined
+    });
+
     return (
       <header style={{
         position: 'sticky', top: 0, zIndex: 100,
@@ -46,32 +59,69 @@
       }}>
         <div style={{
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: '14px 32px', gap: '20px', flexWrap: 'wrap'
+          padding: narrow ? '12px 18px' : '14px 32px', gap: '16px'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-            <a onClick={() => go('home')} style={{ cursor: 'pointer', display: 'inline-flex' }}>
-              <img src={window.LA_IMG.logoLA} alt="Dreamtone Los Angeles" style={{ height: '34px', width: 'auto', display: 'block' }} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', minWidth: 0 }}>
+            <a onClick={() => nav('home')} style={{ cursor: 'pointer', display: 'inline-flex' }}>
+              <img src={window.LA_IMG.logoLA} alt="Dreamtone Los Angeles" style={{ height: narrow ? '28px' : '34px', width: 'auto', display: 'block' }} />
             </a>
-            <TimeCode />
+            {!narrow && <TimeCode />}
           </div>
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '3px', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-            {links.map(([id, label]) =>
-              <a key={id} onClick={() => go(id)}
-                style={{
-                  fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600,
-                  padding: '8px 12px', borderRadius: 'var(--radius-sm)', cursor: 'pointer',
-                  color: active(id) ? '#FFFFFF' : 'rgba(255,255,255,0.68)',
-                  boxShadow: active(id) ? 'inset 0 -3px 0 var(--la)' : 'none'
-                }}>{label}</a>
-            )}
-            <div style={{ width: '10px' }} />
-            <CitySwitch />
-            <div style={{ width: '10px' }} />
-            <Button size="sm" variant="primary" onClick={() => go('book')}>Start a project</Button>
-          </nav>
+
+          {narrow ? (
+            <button aria-label="Menu" aria-expanded={open} onClick={() => setOpen(v => !v)}
+              style={{
+                width: '44px', height: '44px', flexShrink: 0, display: 'flex', flexDirection: 'column',
+                justifyContent: 'center', alignItems: 'center', gap: '5px', cursor: 'pointer',
+                background: 'transparent', border: '1px solid #33322F', borderRadius: 'var(--radius-sm)', padding: 0
+              }}>
+              <span style={{ display: 'block', width: '18px', height: '2px', background: open ? 'var(--la)' : '#fff', transform: open ? 'translateY(7px) rotate(45deg)' : 'none', transition: 'transform 160ms ease-out' }} />
+              <span style={{ display: 'block', width: '18px', height: '2px', background: '#fff', opacity: open ? 0 : 1, transition: 'opacity 120ms ease-out' }} />
+              <span style={{ display: 'block', width: '18px', height: '2px', background: open ? 'var(--la)' : '#fff', transform: open ? 'translateY(-7px) rotate(-45deg)' : 'none', transition: 'transform 160ms ease-out' }} />
+            </button>
+          ) : (
+            <nav style={{ display: 'flex', alignItems: 'center', gap: '3px', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+              {links.map(([id, label]) =>
+                <a key={id} onClick={() => nav(id)} style={linkStyle(id)}>{label}</a>
+              )}
+              <div style={{ width: '10px' }} />
+              <CitySwitch />
+              <div style={{ width: '10px' }} />
+              <Button size="sm" variant="primary" onClick={() => nav('book')}>Start a project</Button>
+            </nav>
+          )}
         </div>
+
+        {narrow && open &&
+          <nav style={{ borderTop: '1px solid #23231f', padding: '10px 18px 22px', display: 'flex', flexDirection: 'column', gap: '2px' }}>
+            {links.map(([id, label]) =>
+              <a key={id} onClick={() => nav(id)} style={linkStyle(id, true)}>{label}</a>
+            )}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginTop: '18px', flexWrap: 'wrap' }}>
+              <CitySwitch />
+              <TimeCode />
+            </div>
+            <div style={{ marginTop: '16px' }}>
+              <Button size="lg" variant="primary" onClick={() => nav('book')}>Start a project</Button>
+            </div>
+          </nav>}
+
         <Bars height={6} />
       </header>);
   }
   window.LAHeader = LAHeader;
+
+  // Shared viewport hook — true when the window is at or below `px` wide.
+  window.LAuseNarrow = function (px) {
+    const q = '(max-width:' + px + 'px)';
+    const [n, setN] = React.useState(() => window.matchMedia(q).matches);
+    React.useEffect(() => {
+      const m = window.matchMedia(q);
+      const on = (e) => setN(e.matches);
+      m.addEventListener('change', on);
+      setN(m.matches);
+      return () => m.removeEventListener('change', on);
+    }, [q]);
+    return n;
+  };
 })();
